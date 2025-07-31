@@ -4,7 +4,7 @@ import cz.mokripat.transparents.BuildConfig
 import cz.mokripat.transparents.data.api.AccountsApi
 import cz.mokripat.transparents.data.repository.AccountsRepositoryImpl
 import cz.mokripat.transparents.domain.repository.AccountsRepository
-import cz.mokripat.transparents.ui.viewmodel.AccountsViewModel
+import cz.mokripat.transparents.ui.screens.list.viewmodel.AccountsViewModel
 import okhttp3.OkHttpClient
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module

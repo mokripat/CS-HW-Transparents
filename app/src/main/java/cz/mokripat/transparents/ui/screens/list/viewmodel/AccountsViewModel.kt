@@ -1,4 +1,4 @@
-package cz.mokripat.transparents.ui.viewmodel
+package cz.mokripat.transparents.ui.screens.list.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
