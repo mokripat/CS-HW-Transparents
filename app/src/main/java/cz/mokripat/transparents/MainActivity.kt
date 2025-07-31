@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import cz.mokripat.transparents.di.networkModule
 import cz.mokripat.transparents.di.transparentsModule
 import cz.mokripat.transparents.ui.theme.TransparentsTheme
 import org.koin.android.ext.koin.androidContext
@@ -22,7 +23,7 @@ class MainActivity : ComponentActivity() {
 
         startKoin {
             androidContext(this@MainActivity)
-            modules(listOf(transparentsModule))
+            modules(listOf(transparentsModule, networkModule))
         }
 
         enableEdgeToEdge()
