@@ -1,11 +1,15 @@
 package cz.mokripat.transparents.domain.repository
 
-import cz.mokripat.transparents.domain.model.AccountsResponse
+import cz.mokripat.transparents.domain.model.Account
+import cz.mokripat.transparents.domain.model.PagedList
+import kotlinx.coroutines.flow.StateFlow
 
 /**
- * Repository for managing transparent accounts.
+ * Repository for fetching transparent accounts.
  */
 interface AccountsRepository {
+    val accounts: StateFlow<PagedList<Account>>
 
-    suspend fun fetchAccounts(): Result<AccountsResponse>
+    suspend fun loadNextPage()
+    fun resetPagination()
 }

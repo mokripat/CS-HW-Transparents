@@ -4,9 +4,13 @@ import cz.mokripat.transparents.BuildConfig
 import cz.mokripat.transparents.data.api.AccountsApi
 import cz.mokripat.transparents.data.repository.AccountsRepositoryImpl
 import cz.mokripat.transparents.domain.repository.AccountsRepository
+import cz.mokripat.transparents.domain.usecase.LoadNextAccountPage
+import cz.mokripat.transparents.domain.usecase.ObserveAccountsPagedList
+import cz.mokripat.transparents.domain.usecase.RefreshAccounts
 import cz.mokripat.transparents.ui.screens.list.viewmodel.AccountsViewModel
 import okhttp3.OkHttpClient
-import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.androidx.viewmodel.dsl.viewModelOf
+import org.koin.core.module.dsl.factoryOf
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -19,7 +23,11 @@ val transparentsModule = module {
         )
     }
 
-    viewModel { AccountsViewModel(get()) }
+    factoryOf(::LoadNextAccountPage)
+    factoryOf(::ObserveAccountsPagedList)
+    factoryOf(::RefreshAccounts)
+
+    viewModelOf(::AccountsViewModel)
 }
 
 val networkModule = module {

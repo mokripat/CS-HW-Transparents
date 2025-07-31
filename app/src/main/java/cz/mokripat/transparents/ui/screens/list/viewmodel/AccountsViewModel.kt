@@ -2,22 +2,31 @@ package cz.mokripat.transparents.ui.screens.list.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import cz.mokripat.transparents.domain.model.Account
+import cz.mokripat.transparents.domain.model.PagedList
+import cz.mokripat.transparents.domain.usecase.LoadNextAccountPage
+import cz.mokripat.transparents.domain.usecase.ObserveAccountsPagedList
+import cz.mokripat.transparents.domain.usecase.RefreshAccounts
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import android.util.Log
-import cz.mokripat.transparents.domain.repository.AccountsRepository
 
 class AccountsViewModel(
-    private val repository: AccountsRepository
+    observeAccountsPagedList: ObserveAccountsPagedList,
+    private val loadNextAccountPage: LoadNextAccountPage,
+    private val refreshAccounts: RefreshAccounts,
 ) : ViewModel() {
 
-    fun fetchAccounts() {
+    val pagedAccounts: StateFlow<PagedList<Account>> = observeAccountsPagedList()
+
+    fun loadNextPage() {
         viewModelScope.launch {
-            try {
-                val response = repository.fetchAccounts()
-                Log.d("AccountsViewModel", "Accounts: $response")
-            } catch (e: Exception) {
-                Log.e("AccountsViewModel", "Error fetching accounts", e)
-            }
+            loadNextAccountPage()
+        }
+    }
+
+    fun refresh() {
+        viewModelScope.launch {
+            refreshAccounts()
         }
     }
 }
