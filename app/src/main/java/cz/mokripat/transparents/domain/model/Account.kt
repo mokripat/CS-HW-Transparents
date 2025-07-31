@@ -8,7 +8,7 @@ data class Account(
     val publicationTo: String,
     val actualizationDate: String,
     val balance: Double,
-    val currency: String,
+    val currency: String?,
     val name: String,
     val iban: String,
     val description: String? = null

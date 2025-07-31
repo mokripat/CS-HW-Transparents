@@ -18,7 +18,7 @@ data class AccountDto(
     @SerializedName("balance")
     val balance: Double,
     @SerializedName("currency")
-    val currency: String,
+    val currency: String?,
     @SerializedName("name")
     val name: String,
     @SerializedName("iban")
