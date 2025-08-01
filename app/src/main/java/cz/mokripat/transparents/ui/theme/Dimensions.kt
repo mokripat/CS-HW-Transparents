@@ -6,6 +6,8 @@ object Dimensions {
     val spacingXSmall = 4.dp
     val spacingSmall = 8.dp
     val spacingMedium = 16.dp
+    val spacingLarge = 24.dp
+    val spacingXLarge = 32.dp
 
     val buttonRadius = 12.dp
 }
