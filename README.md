@@ -23,3 +23,6 @@ API_KEY=VALUE
 ## Logged hours
 
 ![Hours spent](hours_log.png)
+
+### Notes
+- The pagination is retrieving the first page repeatedly because API does not react to page/size path parameters. It is not a bug.
