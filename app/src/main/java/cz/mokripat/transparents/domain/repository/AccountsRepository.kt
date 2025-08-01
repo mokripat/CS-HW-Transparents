@@ -11,5 +11,5 @@ interface AccountsRepository {
     val accounts: StateFlow<PagedList<Account>>
 
     suspend fun loadNextPage()
-    fun resetPagination()
+    suspend fun refresh()
 }

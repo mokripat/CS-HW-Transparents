@@ -91,4 +91,7 @@ dependencies {
 
     // ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
+    // Lottie
+    implementation(libs.lottie.compose)
 }

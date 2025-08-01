@@ -7,7 +7,6 @@ import cz.mokripat.transparents.domain.repository.AccountsRepository
  */
 class RefreshAccounts(private val repository: AccountsRepository) {
     suspend operator fun invoke() {
-        repository.resetPagination()
-        repository.loadNextPage()
+        repository.refresh()
     }
 }

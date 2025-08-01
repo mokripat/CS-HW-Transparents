@@ -5,7 +5,8 @@ package cz.mokripat.transparents.domain.model
  */
 data class PagedList<T>(
     val items: List<T> = emptyList(),
-    val isLoading: Boolean = false,
+    val isLoading: Boolean = true,
+    val isNextLoading: Boolean = false,
     val error: Throwable? = null,
     val currentPage: Int = 0,
     val totalPages: Int = Int.MAX_VALUE,

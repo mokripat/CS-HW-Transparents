@@ -3,6 +3,7 @@ package cz.mokripat.transparents.ui.theme
 import androidx.compose.ui.graphics.Color
 
 val Blue80 = Color(0xFFB5C4FA)
+val Blue60 = Color(0xFF6E8FE8)
 val Blue40 = Color(0xFF2C51D4)
 
 val BlueAccent80 = Color(0xFFCED9FB)
