@@ -12,7 +12,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import cz.mokripat.transparents.R
 import cz.mokripat.transparents.domain.model.Account
 import cz.mokripat.transparents.domain.model.PagedList
 import cz.mokripat.transparents.ui.theme.TransparentsTheme
@@ -43,7 +45,7 @@ fun AccountList(
                 pagedList.isNextLoading -> CircularProgressIndicator()
                 pagedList.error != null -> ListErrorView(onTryAgain)
                 pagedList.hasNextPage -> Button(onClick = onLoadMore) {
-                    Text("Load more")
+                    Text(stringResource(R.string.account_list_load_more_button_text))
                 }
             }
         }

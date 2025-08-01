@@ -17,7 +17,9 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
+import cz.mokripat.transparents.R
 import cz.mokripat.transparents.ui.screens.list.viewmodel.AccountsViewModel
 import cz.mokripat.transparents.ui.theme.Blue60
 import org.koin.androidx.compose.koinViewModel
@@ -35,7 +37,7 @@ fun AccountListScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Transparent Accounts") },
+                title = { Text(stringResource(R.string.account_list_title)) },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")

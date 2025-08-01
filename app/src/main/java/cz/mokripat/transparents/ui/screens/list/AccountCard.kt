@@ -20,7 +20,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import cz.mokripat.transparents.R
 import cz.mokripat.transparents.domain.model.Account
 import cz.mokripat.transparents.ui.theme.Dim
 import cz.mokripat.transparents.ui.theme.TransparentsTheme
@@ -62,11 +64,15 @@ fun AccountCard(
                 Row(modifier = Modifier.padding(top = Dim.spacingSmall)) {
                     Column {
                         Text(
-                            text = "Balance:",
+                            text = stringResource(R.string.account_card_balance_message),
                             style = MaterialTheme.typography.bodySmall
                         )
                         Text(
-                            text = "${account.balance} ${account.currency ?: ""}",
+                            text = stringResource(
+                                R.string.account_card_balance_value,
+                                account.balance,
+                                account.currency ?: ""
+                            ),
                             style = MaterialTheme.typography.titleMedium
                         )
                     }
@@ -85,7 +91,7 @@ fun AccountCard(
                             contentColor = MaterialTheme.colorScheme.onPrimary
                         )
                     ) {
-                        Text("Details")
+                        Text(stringResource(R.string.account_card_button_text))
                     }
 
                 }

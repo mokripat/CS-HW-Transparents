@@ -18,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -52,7 +53,7 @@ fun HomeScreen(
             Spacer(modifier = Modifier.height(Dim.spacingLarge))
 
             Text(
-                text = "Welcome to Transparents!",
+                text = stringResource(R.string.home_welcome_title),
                 style = MaterialTheme.typography.displayMedium,
                 textAlign = TextAlign.Center
             )
@@ -60,16 +61,16 @@ fun HomeScreen(
             Spacer(modifier = Modifier.height(Dim.spacingSmall))
 
             Text(
-                text = "By Patrik Mokriš",
+                text = stringResource(R.string.home_author),
                 style = MaterialTheme.typography.bodyMedium,
                 textAlign = TextAlign.Center
             )
 
             Spacer(modifier = Modifier.height(Dim.spacingXLarge))
 
-            BulletPoint(emoji = "🔍", text = "Browse all transparent bank accounts in one place")
-            BulletPoint(emoji = "📄", text = "See full account details, including balance and history")
-            BulletPoint(emoji = "📋", text = "Copy account info to clipboard for easy sharing")
+            BulletPoint(emoji = "🔍", text = stringResource(R.string.home_bullet_first))
+            BulletPoint(emoji = "📄", text = stringResource(R.string.home_bullet_second))
+            BulletPoint(emoji = "📋", text = stringResource(R.string.home_bullet_third))
 
             Spacer(modifier = Modifier.height(Dim.spacingMedium))
 
@@ -81,7 +82,7 @@ fun HomeScreen(
                     .fillMaxWidth()
                     .padding(bottom = SCREEN_BOTTOM_PADDING)
             ) {
-                Text(text = "Show Accounts")
+                Text(text = stringResource(R.string.home_main_button_message))
             }
         }
     }

@@ -11,8 +11,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import cz.mokripat.transparents.R
 import cz.mokripat.transparents.ui.theme.Dim
 import cz.mokripat.transparents.ui.theme.TransparentsTheme
 
@@ -28,7 +30,7 @@ fun EmptyDetailScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            "Account with IBAN\n${iban}\ncould not be retrieved.",
+            text = stringResource(R.string.account_detail_empty_message, iban),
             style = MaterialTheme.typography.headlineSmall,
             textAlign = TextAlign.Center
         )
@@ -36,7 +38,7 @@ fun EmptyDetailScreen(
         Spacer(modifier = Modifier.height(Dim.spacingMedium))
 
         Button(onClick = onTryAgain) {
-            Text("Try again")
+            Text(stringResource(R.string.account_detail_try_again_message))
         }
     }
 }

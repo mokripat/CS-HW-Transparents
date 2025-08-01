@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">Transparents</string>
+    <string name="account_detail_copy_message">Copied to clipboard</string>
+    <string name="account_detail_title">Account Details</string>
+    <string name="account_detail_field_name">Name</string>
+    <string name="account_detail_field_number">Account Number</string>
+    <string name="account_detail_field_code">Bank Code</string>
+    <string name="account_detail_field_iban">IBAN</string>
+    <string name="account_detail_field_currency">Currency</string>
+    <string name="account_detail_field_balance">Balance</string>
+    <string name="account_detail_field_transp_from">Transparency From</string>
+    <string name="account_detail_field_transp_to">Transparency To</string>
+    <string name="account_detail_field_pub_to">Publication To</string>
+    <string name="unknown_value">N/A</string>
+    <string name="account_detail_field_act_date">Actualization Date</string>
+    <string name="account_detail_field_description">Description</string>
+    <string name="account_detail_empty_message">Account with IBAN\n%1$s\ncould not be retrieved.</string>
+    <string name="account_detail_try_again_message">Try again</string>
+    <string name="home_welcome_title">Welcome to Transparents!</string>
+    <string name="home_author">By Patrik Mokriš</string>
+    <string name="home_bullet_first">Browse all transparent bank accounts in one place</string>
+    <string name="home_bullet_second">See full account details, including balance and history</string>
+    <string name="home_bullet_third">Copy account info to clipboard for easy sharing</string>
+    <string name="home_main_button_message">Show Accounts</string>
+    <string name="account_card_balance_message">Balance:</string>
+    <string name="account_card_balance_value">%1$s %2$s</string>
+    <string name="account_card_button_text">Details</string>
+    <string name="account_list_load_more_button_text">Load more</string>
+    <string name="account_list_title">Transparent Accounts</string>
+    <string name="account_list_error_message">Error Occurred</string>
+    <string name="account_list_try_again_button_text">Retry</string>
 </resources>

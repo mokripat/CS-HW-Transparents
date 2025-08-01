@@ -18,6 +18,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
+import cz.mokripat.transparents.R
 import cz.mokripat.transparents.ui.theme.Dim
 import cz.mokripat.transparents.ui.theme.TransparentsTheme
 
@@ -46,7 +47,11 @@ fun AccountDetailField(label: String, value: String) {
                     onLongClick = {
                         clipboardManager.setText(AnnotatedString(value))
                         haptics.performHapticFeedback(HapticFeedbackType.LongPress)
-                        Toast.makeText(context, "Copied to clipboard", Toast.LENGTH_SHORT)
+                        Toast.makeText(
+                            context,
+                            context.getString(R.string.account_detail_copy_message),
+                            Toast.LENGTH_SHORT
+                        )
                             .show()
                     }
                 )

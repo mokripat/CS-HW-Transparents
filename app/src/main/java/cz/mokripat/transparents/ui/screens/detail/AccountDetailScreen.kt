@@ -17,7 +17,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
+import cz.mokripat.transparents.R
 import cz.mokripat.transparents.ui.screens.detail.viewModel.AccountDetailViewModel
 import cz.mokripat.transparents.ui.theme.Dim
 import org.koin.androidx.compose.getViewModel
@@ -35,7 +37,7 @@ fun AccountDetailScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Account Details") },
+                title = { Text(stringResource(R.string.account_detail_title)) },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
@@ -57,18 +59,18 @@ fun AccountDetailScreen(
         ) {
             account?.let { data ->
                 item { Spacer(modifier = Modifier.height(Dim.spacingSmall)) }
-                item { AccountDetailField("Name", data.name) }
-                item { AccountDetailField("Account Number", data.accountNumber) }
-                item { AccountDetailField("Bank Code", data.bankCode) }
-                item { AccountDetailField("IBAN", data.iban) }
-                item { AccountDetailField("Currency", data.currency ?: "N/A") }
-                item { AccountDetailField("Balance", data.balance.toString()) }
-                item { AccountDetailField("Transparency From", data.transparencyFrom) }
-                item { AccountDetailField("Transparency To", data.transparencyTo) }
-                item { AccountDetailField("Publication To", data.publicationTo) }
-                item { AccountDetailField("Actualization Date", data.actualizationDate) }
+                item { AccountDetailField(label = stringResource(R.string.account_detail_field_name), value = data.name) }
+                item { AccountDetailField(label = stringResource(R.string.account_detail_field_number), value = data.accountNumber) }
+                item { AccountDetailField(label = stringResource(R.string.account_detail_field_code), value = data.bankCode) }
+                item { AccountDetailField(label = stringResource(R.string.account_detail_field_iban), value = data.iban) }
+                item { AccountDetailField(label = stringResource(R.string.account_detail_field_currency), value = data.currency ?: stringResource(R.string.unknown_value)) }
+                item { AccountDetailField(label = stringResource(R.string.account_detail_field_balance), value = data.balance.toString()) }
+                item { AccountDetailField(label = stringResource(R.string.account_detail_field_transp_from), value = data.transparencyFrom) }
+                item { AccountDetailField(label = stringResource(R.string.account_detail_field_transp_to), value = data.transparencyTo) }
+                item { AccountDetailField(label = stringResource(R.string.account_detail_field_pub_to), value = data.publicationTo) }
+                item { AccountDetailField(label = stringResource(R.string.account_detail_field_act_date), value = data.actualizationDate) }
                 data.description?.let {
-                    item { AccountDetailField("Description", it) }
+                    item { AccountDetailField(label = stringResource(R.string.account_detail_field_description), value = it) }
                 }
                 item { Spacer(modifier = Modifier.height(Dim.spacingMedium)) }
             }
