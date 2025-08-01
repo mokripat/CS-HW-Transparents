@@ -7,18 +7,22 @@ import cz.mokripat.transparents.domain.model.PagedList
 import cz.mokripat.transparents.domain.usecase.LoadNextAccountPage
 import cz.mokripat.transparents.domain.usecase.ObserveAccountsPagedList
 import cz.mokripat.transparents.domain.usecase.RefreshAccounts
-import cz.mokripat.transparents.ui.screens.home.HomeScreen
+import cz.mokripat.transparents.ui.screens.list.AccountListScreen
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 /**
- * ViewModel for the [HomeScreen].
+ * ViewModel for the [AccountListScreen].
  */
 class AccountsViewModel(
     observeAccountsPagedList: ObserveAccountsPagedList,
     private val loadNextAccountPage: LoadNextAccountPage,
     private val refreshAccounts: RefreshAccounts,
 ) : ViewModel() {
+
+    init {
+        refresh()
+    }
 
     val pagedAccounts: StateFlow<PagedList<Account>> = observeAccountsPagedList()
 
