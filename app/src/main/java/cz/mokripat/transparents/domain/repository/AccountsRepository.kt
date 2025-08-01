@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.StateFlow
 interface AccountsRepository {
     val accounts: StateFlow<PagedList<Account>>
 
+    fun getAccountByIban(iban: String): Account?
     suspend fun loadNextPage()
     suspend fun refresh()
 }

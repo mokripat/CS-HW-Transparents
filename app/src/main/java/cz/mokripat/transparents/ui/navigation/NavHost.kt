@@ -26,19 +26,19 @@ fun AppNavHost() {
         composable(Screen.List.route) {
             AccountListScreen(
                 navController = navController,
-                onShowDetail = { accountId ->
-                    navController.navigate(Screen.Detail.createRoute(accountId))
+                onShowDetail = { iban ->
+                    navController.navigate(Screen.Detail.createRoute(iban))
                 }
             )
         }
 
         composable(
             route = Screen.Detail.route,
-            arguments = listOf(navArgument("accountId") { type = NavType.StringType })
+            arguments = listOf(navArgument("iban") { type = NavType.StringType })
         ) { backStackEntry ->
-            val accountId = backStackEntry.arguments?.getString("accountId")
-            requireNotNull(accountId) { "accountId must not be null" }
-            AccountDetailScreen(accountId = accountId, navController = navController)
+            val iban = backStackEntry.arguments?.getString("iban")
+            requireNotNull(iban) { "iban must not be null" }
+            AccountDetailScreen(iban = iban, navController = navController)
         }
     }
 }
