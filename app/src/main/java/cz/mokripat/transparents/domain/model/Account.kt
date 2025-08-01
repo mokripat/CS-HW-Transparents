@@ -1,5 +1,8 @@
 package cz.mokripat.transparents.domain.model
 
+/**
+ * Domain representation of a transparent account.
+ */
 data class Account(
     val accountNumber: String,
     val bankCode: String,

@@ -1,7 +1,7 @@
 package cz.mokripat.transparents.domain.model
 
 /**
- * Represents a paged list of items with loading and error indication.
+ * Domain representation a paged list of items with loading and error indication.
  */
 data class PagedList<T>(
     val items: List<T> = emptyList(),

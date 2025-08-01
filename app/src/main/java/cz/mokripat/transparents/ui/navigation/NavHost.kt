@@ -10,6 +10,9 @@ import cz.mokripat.transparents.ui.screens.detail.AccountDetailScreen
 import cz.mokripat.transparents.ui.screens.list.AccountListScreen
 import cz.mokripat.transparents.ui.screens.home.HomeScreen
 
+/**
+ * Navigation host managing navigation and arguments between screens.
+ */
 @Composable
 fun AppNavHost() {
     val navController = rememberNavController()

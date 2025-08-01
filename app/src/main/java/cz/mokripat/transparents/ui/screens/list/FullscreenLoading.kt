@@ -3,6 +3,7 @@ package cz.mokripat.transparents.ui.screens.list
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.LottieConstants
@@ -30,4 +31,10 @@ fun FullscreenLoading(modifier: Modifier = Modifier) {
         progress = { preloaderProgress },
         modifier = modifier
     )
+}
+
+@Preview
+@Composable
+fun FullscreenLoadingPreview() {
+    FullscreenLoading()
 }

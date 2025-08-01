@@ -17,7 +17,9 @@ import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.tooling.preview.Preview
 import cz.mokripat.transparents.ui.theme.Dim
+import cz.mokripat.transparents.ui.theme.TransparentsTheme
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -50,5 +52,13 @@ fun AccountDetailField(label: String, value: String) {
                 )
                 .padding(Dim.spacingSmall)
         )
+    }
+}
+
+@Preview
+@Composable
+fun AccountDetailFiled() {
+    TransparentsTheme {
+        AccountDetailField(label = "IBAN", value = "CZ1234567890")
     }
 }

@@ -9,6 +9,11 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
+/**
+ * Implementation of [AccountsRepository] using [AccountsApi].
+ *
+ * Refresh includes delay to simulate network delay.
+ */
 class AccountsRepositoryImpl(
     private val api: AccountsApi,
     private val apiKey: String,
@@ -18,7 +23,7 @@ class AccountsRepositoryImpl(
     override val accounts: StateFlow<PagedList<Account>> = _accounts
 
     override fun getAccountByIban(iban: String): Account? =
-        _accounts.value.items.firstOrNull { account -> account.iban == iban } // Naive implementation, assuming only hundreds of accounts
+        _accounts.value.items.firstOrNull { account -> account.iban == iban } // Naive implementation, assuming limited number of accounts
 
     override suspend fun refresh() {
         _accounts.value = PagedList(isLoading = true)
